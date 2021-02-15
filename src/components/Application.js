@@ -1,5 +1,4 @@
 import React from "react";
-
 import "components/Application.scss";
 
 export default function Application(props) {
@@ -20,6 +19,7 @@ export default function Application(props) {
 					alt="Lighthouse Labs"
 				/>
 			</section>
+
 			<section className="schedule">
 				{/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
 			</section>

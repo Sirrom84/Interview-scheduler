@@ -13,7 +13,7 @@ storiesOf("Button", module)
 	})
 	.add("Base", () => <Button>Base</Button>)
 	.add("Confirm", () => <Button confirm>Confirm</Button>)
-	.add("Danger", () => <Button danger>Cancel</Button>)
+	.add("Danger", () => <Button danger>Danger</Button>)
 	.add("Clickable", () => (
 		<Button onClick={action("button-clicked")}>Clickable</Button>
 	))
@@ -22,4 +22,3 @@ storiesOf("Button", module)
 			Disabled
 		</Button>
 	));
-//putting line in to test git
