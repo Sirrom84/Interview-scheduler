@@ -3,13 +3,17 @@ import "components/Application.scss";
 import DayList from "./DayList";
 import Appointment from "components/Appointment";
 import axios from "axios";
-import {getAppointmentsForDay} from "components/helpers/selectors";
+import {
+	getAppointmentsForDay,
+	getInterview,
+} from "components/helpers/selectors";
 
 export default function Application(props) {
 	const [state, setState] = useState({
 		day: "Monday",
 		days: [],
 		appointments: {},
+		interviewers: {},
 	});
 
 	const setDay = (day) => setState({...state, day});
@@ -17,11 +21,15 @@ export default function Application(props) {
 	const dailyAppointments = getAppointmentsForDay(state, state.day);
 
 	const schedMap = dailyAppointments.map((apt) => {
+		console.log("STATE!!!", state);
+		console.log("APT", apt);
+		const interview = getInterview(state, apt.interview);
 		return (
 			<Appointment
 				key={apt.id}
+				id={apt.id}
 				time={apt.time}
-				interviewer={apt.interviewer}
+				interview={apt.interview}
 				{...apt}
 			/>
 		);
@@ -37,7 +45,7 @@ export default function Application(props) {
 				...last,
 				days: all[0].data,
 				appointments: all[1].data,
-				interviwers: all[2].data,
+				interviewers: all[2].data,
 			}));
 		});
 	}, []);
@@ -45,7 +53,6 @@ export default function Application(props) {
 	return (
 		<main className="layout">
 			<section className="sidebar">
-				{/* Replace this with the sidebar elements during the "Project Setup & Familiarity" activity. */}
 				<img
 					className="sidebar--centered"
 					src="images/logo.png"
