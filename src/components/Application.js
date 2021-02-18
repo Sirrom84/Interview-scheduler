@@ -3,6 +3,7 @@ import "components/Application.scss";
 import DayList from "./DayList";
 import Appointment from "components/Appointment";
 import axios from "axios";
+import getAppointmentsForDay from "components/helpers/selectors";
 
 /* "GET_DAYS":         http://localhost:8001/api/days,
 "GET_APPOINTMENTS": http://localhost:8001/api/appointments,
