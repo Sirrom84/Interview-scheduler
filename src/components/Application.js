@@ -6,6 +6,7 @@ import axios from "axios";
 import {
 	getAppointmentsForDay,
 	getInterview,
+	getInterviewersForDay,
 } from "components/helpers/selectors";
 
 export default function Application(props) {
@@ -19,7 +20,7 @@ export default function Application(props) {
 	const setDay = (day) => setState({...state, day});
 
 	const dailyAppointments = getAppointmentsForDay(state, state.day);
-
+	const interviewDay = getInterviewersForDay(state, state.day);
 	const schedMap = dailyAppointments.map((apt) => {
 		const interview = getInterview(state, apt.interview);
 		return (
@@ -27,11 +28,17 @@ export default function Application(props) {
 				key={apt.id}
 				id={apt.id}
 				time={apt.time}
+				interviewers={interviewDay}
 				interview={apt.interview}
 				{...apt}
+				bookInterview={bookInterview}
 			/>
 		);
 	});
+
+	function bookInterview(id, interview) {
+		console.log(id, interview);
+	}
 
 	useEffect(() => {
 		Promise.all([
