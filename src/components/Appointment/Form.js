@@ -27,7 +27,7 @@ export default function Form(props) {
 				<form autoComplete="off">
 					<input
 						className="appointment__create-input text--semi-bold"
-						name={props.namename}
+						name={props.name}
 						type="text"
 						placeholder="Enter Student Name"
 						value={name}

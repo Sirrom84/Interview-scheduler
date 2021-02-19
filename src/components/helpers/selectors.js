@@ -23,5 +23,6 @@ export function getInterview(state, interview) {
 
 	interview["interviewer"] = interviewerObj;
 
+	console.log(interview);
 	return interview;
 }
