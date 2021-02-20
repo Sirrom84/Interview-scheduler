@@ -14,24 +14,32 @@ export default function Application(props) {
 		day: "Monday",
 		days: [],
 		appointments: {},
-		interviewers: {},
+		interviewers: [],
 	});
-
+	// console.log("THIS IS STATE INTERVIEWERS", state.interviewers);
 	const setDay = (day) => setState({...state, day});
+
+	console.log("STATE", state);
+	// console.log("STATE INT", state.appointments);
 
 	const dailyAppointments = getAppointmentsForDay(state, state.day);
 	const interviewDay = getInterviewersForDay(state, state.day);
 	const schedMap = dailyAppointments.map((apt) => {
 		const interview = getInterview(state, apt.interview);
+		console.log(
+			"THIS IS MY INTERVIEW LOG LETS FIND THE NAME SHALL WE",
+			interview
+		);
+		// console.log("APT", dailyAppointments);
 		return (
 			<Appointment
 				key={apt.id}
 				id={apt.id}
 				time={apt.time}
 				interviewers={interviewDay}
-				interview={apt.interview}
-				{...apt}
+				interview={interview}
 				bookInterview={bookInterview}
+				// {...apt}
 			/>
 		);
 	});
@@ -46,12 +54,13 @@ export default function Application(props) {
 			...state.appointments,
 			[id]: appointment,
 		};
+
 		setState({
 			...state,
 			appointments,
 		});
-		console.log("APOINTMENTS", appointment);
-		console.log(id, interview);
+		// console.log("APOINTMENTS", appointment);
+		// console.log(id, interview);
 	}
 
 	useEffect(() => {
