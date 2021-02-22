@@ -54,7 +54,7 @@ export function useApplicationData() {
 	function cancelInterview(id, interview) {
 		const appointment = {
 			...state.appointments[id],
-			interview: {...interview},
+			interview: null,
 		};
 		const appointments = {
 			...state.appointments,
@@ -62,16 +62,10 @@ export function useApplicationData() {
 		};
 
 		const url = `/api/appointments/${appointment.id}`;
-		return axios
-			.delete(url, {
-				id: appointment.id,
-				time: appointment.time,
-				interview: null,
-			})
-			.then(() => {
-				const days = updateSpots(state.day, state.days, appointments);
-				setState({...state, appointments, days});
-			});
+		return axios.delete(url).then((res) => {
+			let days = updateSpots(state.day, state.days, appointments);
+			setState({...state, appointments, days});
+		});
 	}
 	////Updates spots remaining on sidebar////
 	const updateSpots = function (day, days, appointments) {
