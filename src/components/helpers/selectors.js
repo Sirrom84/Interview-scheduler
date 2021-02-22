@@ -30,5 +30,6 @@ export function getInterview(state, interview) {
 	let resultOj = {};
 	resultOj.student = interview.student;
 	resultOj.interviewer = state.interviewers[interview.interviewer];
+
 	return resultOj;
 }

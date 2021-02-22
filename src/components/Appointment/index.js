@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 import "components/Appointment/styles.scss";
 import useVisualMode from "hooks/useVisualMode";
 import Header from "./Header";
@@ -66,7 +66,7 @@ export default function Appointment(props) {
 				/>
 			)}
 			{mode === CREATE && (
-				<Form //need to make create
+				<Form
 					interviewers={props.interviewers}
 					onSave={save}
 					onCancel={() => {
