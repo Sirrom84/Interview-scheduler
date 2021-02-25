@@ -3,7 +3,7 @@ import {useState} from "react";
 export default function useVisualMode(initial) {
 	const [mode, setMode] = useState(initial);
 	const [history, setHistory] = useState([initial]);
-
+	///Transition///
 	const transition = (newMode, replace = false) => {
 		setMode(newMode);
 		const newHistory = [...history, newMode];
@@ -11,7 +11,7 @@ export default function useVisualMode(initial) {
 			setHistory(newHistory);
 		}
 	};
-
+	///Back///
 	const back = () => {
 		const newHistory = history.slice(0, -1);
 		setHistory(newHistory);

@@ -74,7 +74,7 @@ export default function Appointment(props) {
 					}}
 				/>
 			)}
-			{mode === SAVING && <Status message="Saving..." />};
+			{mode === SAVING && <Status message="Saving..." />}
 			{mode === CONFIRM && (
 				<Confirm
 					onConfirm={deleteAppointment}
@@ -83,7 +83,7 @@ export default function Appointment(props) {
 					}}
 				/>
 			)}
-			{mode === DELETE && <Status message="Deleting..." />};
+			{mode === DELETE && <Status message="Deleting..." />}
 			{mode === EDIT && (
 				<Form
 					name={props.interview.student}
