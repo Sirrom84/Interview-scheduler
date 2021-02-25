@@ -16,7 +16,7 @@ import Status from "components/Appointment/Status";
 import Error from "components/Appointment/Error";
 import Form from "components/Appointment/Form";
 
-//Button
+//Button//
 storiesOf("Button", module)
 	.addParameters({
 		backgrounds: [{name: "dark", value: "#222f3e", default: true}],
@@ -33,7 +33,7 @@ storiesOf("Button", module)
 		</Button>
 	));
 
-//DayList
+///DayList///
 storiesOf("DayListItem", module)
 	.addParameters({
 		backgrounds: [{name: "dark", value: "#222f3e", default: true}],
@@ -74,7 +74,7 @@ storiesOf("DayList", module)
 		<DayList days={days} day={"Tuesday"} setDay={action("setDay")} />
 	));
 
-//Interviewer
+///Interviewer///
 const interviewer = {
 	id: 1,
 	name: "Sylvia Palmer",
@@ -109,7 +109,7 @@ storiesOf("InterviewerListItem", module)
 		/>
 	));
 
-//Interviewer List
+///Interviewer List///
 const interviewers = [
 	{id: 1, name: "Sylvia Palmer", avatar: "https://i.imgur.com/LpaY82x.png"},
 	{id: 2, name: "Tori Malcolm", avatar: "https://i.imgur.com/Nmx0Qxo.png"},
@@ -136,7 +136,7 @@ storiesOf("InterviewerList", module)
 		/>
 	));
 
-///APOINTMENTS
+///APOINTMENTS///
 
 storiesOf("Appointment", module)
 	.addParameters({

@@ -17,10 +17,6 @@ export default function Form(props) {
 		reset();
 	}
 
-	function save() {
-		props.onSave(name, interviewer);
-		setName(name);
-	}
 	function validate() {
 		if (name === "") {
 			setError("Student name cannot be blank");
@@ -42,7 +38,6 @@ export default function Form(props) {
 						placeholder="Enter Student Name"
 						value={name}
 						onChange={(event) => setName(event.target.value)}
-						// onSubmit={(event) => event.preventDefault()}
 						data-testid="student-name-input"
 					/>
 				</form>
