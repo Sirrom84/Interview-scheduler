@@ -24,8 +24,6 @@ npm test
 npm run storybook
 ```
 
-##Screenshots
-
 ![Add interview](https://github.com/Sirrom84/scheduler/blob/master/docs/Add-interview.png)
 ![Add appointment](https://github.com/Sirrom84/scheduler/blob/master/docs/Appointment-Form.png)
 ![Delete interview](https://github.com/Sirrom84/scheduler/blob/master/docs/Delete-interview.png)
