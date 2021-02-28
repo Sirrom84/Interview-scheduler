@@ -96,18 +96,13 @@ export default function Appointment(props) {
 				/>
 			)}{" "}
 			{mode === ERROR_SAVE && (
-				<Error
-					message="Error on Save. Appointment not saved."
-					onClose={() => {
-						transition(EDIT);
-					}}
-				/>
+				<Error message="Error on Save. Appointment not saved." onClose={back} />
 			)}
 			{mode === ERROR_DELETE && (
 				<Error
 					message="Error on Delete. Could not delete apointment at this time."
 					onClose={() => {
-						transition(CONFIRM);
+						transition(SHOW);
 					}}
 				/>
 			)}
